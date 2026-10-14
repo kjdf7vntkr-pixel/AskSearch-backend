@@ -45,7 +45,7 @@ app.post("/search", async (req, res) => {
     const data = await response.json();
 
     if (!response.ok) {
-      console.error("Gemini request failed:", response.status);
+      console.error("Gemini error details:", JSON.stringify(data));
       return res.status(502).json({
         answer: "The AI service could not answer. Please try again."
       });
